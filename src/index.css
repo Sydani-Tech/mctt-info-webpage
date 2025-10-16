@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Define theme settings */
+@theme {
+  --font-sans: "Ubuntu", sans-serif;
+}
+
+/* Apply globally */
+body {
+  @apply font-sans;
+}
+
+@theme {
+  --font-sans: "Ubuntu", sans-serif;
+  --font-alt: "Poppins", sans-serif;
+}
