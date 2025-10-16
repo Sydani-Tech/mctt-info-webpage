@@ -1,5 +1,5 @@
 import population_icon from "../assets/content/population-icon.svg"
-import population_image from "../assets/content/population-image.svg"
+import population_image from "../assets/P-Targeting_img.png"
 import data_viz_icon from "../assets/content/data-viz-icon.svg"
 import data_viz_image from "../assets/content/data-viz-image.svg"
 import micro_plan_icon from "../assets/content/micro-planning-icon.svg"
@@ -61,6 +61,7 @@ export const Suite = [
     icon: DA_icon
     },
 ];
+
 export const BetterPlanning = [
   { 
     name: "Population Targeting", 

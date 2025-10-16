@@ -8,7 +8,7 @@ import vaccination from "./assets/vaccination.svg";
 import visualization from "./assets/data_visualization.svg";
 import { BetterPlanning, Ministries, Reviews, Suite } from "./content/content";
 import { Check, Headset, Rocket, ShieldCheck } from "lucide-react";
-import map from "./assets/map.svg";
+import map from "./assets/map_img.png";
 
 export default function Landing() {
   return (
@@ -41,11 +41,11 @@ export default function Landing() {
             </div>
 
             <div className="flex gap-5 my-4 lg:text-sm text-xs md:justify-start justify-center">
-              <div className="flex items-center gap-1">
+              <div className="flex items-center justify-center gap-1">
                 <img src={group} alt="" />
                 <p>2M+ People Reached</p>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center  justify-center gap-1">
                 <img src={world} alt="" />
                 <p>10+ Countries Supported</p>
               </div>
@@ -53,7 +53,7 @@ export default function Landing() {
           </div>
 
           {/* MAP */}
-          <div className="flex items-center justify-center md:pr-5 lg:pr-0 pr-0">
+          <div className="flex items-center justify-center">
             <img src={map} alt="" className="md:w-full w-[85%]" />
           </div>
         </div>
@@ -218,8 +218,8 @@ export default function Landing() {
         {/* Reviews */}
         <section className="py-12">
           <div className="text-center mb-14">
-            <p className="text-4xl">Real Impacts, Real Results</p>
-            <p className="w-[80%] mx-auto mt-3 text-sm text-gray-600">
+            <p className="lg:text-4xl text-3xl">Real Impacts, Real Results</p>
+            <p className="lg:w-[80%] mx-auto mt-3 text-sm text-gray-600">
               See how organizations are transforming their operations with MCTT
             </p>
           </div>
