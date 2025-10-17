@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 export default function AnimatedText() {
-  const texts = ["Microplanning", "Service Delivery", "Coverage"];
+  const texts = ["Microplanning", "Service Delivery", "Campaign"];
   const [currentIndex, setCurrentIndex] = useState(0);
   const textRef = useRef(null);
 
@@ -51,7 +51,7 @@ export default function AnimatedText() {
 
   return (
         <>
-          <div className='md:h-18 overflow-y-hidden flex items-center'>
+          <div className='lg:h-18 overflow-y-hidden flex items-center'>
             <p
           ref={textRef}
           className="lg:text-6xl font-bold py-1 bg-gradient-to-r from-gradient-start to-gradient-end bg-clip-text text-transparent"

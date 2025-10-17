@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-    <div className='font-sans max-w-screen-xl'>
+    <div className='font-sans'>
       <Header/>
     <Landing/>
     <Footer/>

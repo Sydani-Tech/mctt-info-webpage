@@ -6,15 +6,35 @@ import { gsap } from "gsap";
 
 export default function Header() {
   const navLinks = [
-    { name: "Features", href: "#" },
-    { name: "Use Cases", href: "#" },
-    { name: "Resources", href: "#" },
-    { name: "Support", href: "#" },
+    { name: "About", href: "#plan-smarter" },
+    { name: "Features", href: "#comprehensive" },
+    { name: "Use Cases", href: "#trusted-by" },
   ];
 
   const [open, setOpen] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    if (href === "#") return;
+    
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      
+      // Close mobile menu if open
+      if (open) {
+        setOpen(false);
+      }
+    }
+  };
 
   useEffect(() => {
     if (open) {
@@ -97,7 +117,8 @@ export default function Header() {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-white transition-colors"
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                    className="text-white transition-colors cursor-pointer"
                   >
                     {link.name}
                   </a>
@@ -136,7 +157,8 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="transition-colors opacity-0"
+                onClick={(e) => handleSmoothScroll(e, link.href)}
+                className="transition-colors opacity-0 cursor-pointer"
               >
                 {link.name}
               </a>

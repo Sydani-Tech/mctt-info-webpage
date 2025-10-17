@@ -6,7 +6,7 @@ import frame from "./assets/Frame_mctt.svg";
 import precision from "./assets/precise_mapping.svg";
 import vaccination from "./assets/vaccination.svg";
 import visualization from "./assets/data_visualization.svg";
-import { BetterPlanning, Ministries, Reviews, Suite } from "./content/content";
+import { Ministries, Suite } from "./content/content";
 import { Check, Headset, Rocket, ShieldCheck } from "lucide-react";
 import map from "./assets/map_img.png";
 
@@ -16,8 +16,8 @@ export default function Landing() {
       {/* Hero div */}
       <div className="flex items-center bg-gradient-to-r from-gradient-start/10 to-gradient-end/10 text-gray-800">
         <div className="md:grid grid-cols-2 flex flex-col-reverse mx-auto lg:w-[90%] lg:px-o lg:my-18 my-8">
-          <div className="px-5 flex flex-col justify-center">
-            <div className="lg:text-6xl sm:text-5xl text-4xl font-bold leading-[1.2] md:text-left text-center md:mt-0 mt-10">
+          <div className="md:px-5 flex flex-col justify-center">
+            <div className="lg:text-6xl md:text-4xl sm:text-5xl  text-4xl font-bold leading-[1.2] md:text-left text-center md:mt-0 mt-10">
               <p className="">Redefining</p>
               <div className="md:block flex justify-center items-center">
                 <AnimatedText />
@@ -40,12 +40,12 @@ export default function Landing() {
               </Button>
             </div>
 
-            <div className="flex gap-5 my-4 lg:text-sm text-xs md:justify-start justify-center">
+            <div className="flex gap-5 my-4 lg:text-sm text-xs md:justify-start justify-center sm:text-left text-center">
               <div className="flex items-center justify-center gap-1">
                 <img src={group} alt="" />
                 <p>2M+ People Reached</p>
               </div>
-              <div className="flex items-center  justify-center gap-1">
+              <div className="flex items-center justify-center gap-1">
                 <img src={world} alt="" />
                 <p>10+ Countries Supported</p>
               </div>
@@ -53,7 +53,7 @@ export default function Landing() {
           </div>
 
           {/* MAP */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center md:pr-5">
             <img src={map} alt="" className="md:w-full w-[85%]" />
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function Landing() {
 
       <div className=" bg-slate-50 text-gray-800 pt-12">
         {/* What is MCTT */}
-        <section>
+        <section id="plan-smarter">
           <div className="text-center mb-12 md:px-0 px-5">
             <p className="lg:text-4xl text-3xl">Plan Smarter. Map Better. Reach Everyone</p>
             <p className="lg:w-[35%] md:w-[80%] md:px-0 px-5 mx-auto mt-3 text-sm text-gray-600">
@@ -71,16 +71,14 @@ export default function Landing() {
             </p>
           </div>
 
-          <div className="xl:w-[92%] mx-auto xl:grid grid-cols-3 flex flex-col-reverse gap-4 lg:px-0 px-5">
-            <div className="col-span-1">
-              <p className="lg:text-4xl text-3xl">What is MCTT?</p>
+          <div className="xl:w-[92%] mx-auto xl:grid grid-cols-3 flex flex-col-reverse gap-4 xl:px-0 px-5 lg:px-10">
+            <div className="col-span-1 md:px-5 xl:px-0">
+              <p className="lg:text-4xl text-3xl">About the Tool</p>
               <p className="my-4 lg:text-lg leading-5">
-                The Micro Census Tool enables precise geospatial mapping and
-                data collection for public health initiatives across Nigeria’s
-                communities.
+                CoverageTrackr enables precise geospatial mapping and data collection for initiatives in at any location. 
               </p>
 
-              <div className="xl:flex flex-col md:grid grid-cols-4 gap-4 space-y-2">
+              <div className="xl:flex flex-col items-center md:grid grid-cols-4 gap-4 space-y-2">
                 <div className="flex col-span-2 gap-5 rounded-lg shadow-lg bg-gradient-to-r from-gradient-start/10 to-gradient-start/20 p-4">
                   <img src={precision} alt="" className="h-12" />
                   <div>
@@ -123,13 +121,13 @@ export default function Landing() {
             </div>
 
             <div className="col-span-2 h-full flex justify-center items-center">
-              <img src={frame} alt="" className="" />
+              <img src={frame} alt="" className="md:w-[95%]" />
             </div>
           </div>
         </section>
 
         {/* Comprehensive planning suite */}
-        <section className="py-12">
+        <section className="py-12" id="comprehensive">
           <div className="text-center mb-14 md:px-0 px-5">
             <p className="lg:text-4xl text-3xl">Comprehensive Planning Suite</p>
             <p className="lg:w-[80%] mx-auto mt-3 text-sm text-gray-600">
@@ -160,7 +158,7 @@ export default function Landing() {
         </section>
 
         {/* Better planning div */}
-        <section className="py-12">
+        {/* <section className="py-12">
           <div className="text-center mb-10">
             <p className="text-4xl">Your Path to Better Planning</p>
             <p className="w-[80%] mx-auto mt-3 text-sm text-gray-600">
@@ -184,11 +182,11 @@ export default function Landing() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Trusted Div */}
-        <section className="py-12">
-          <div className="text-center mb-10">
+        <section className="py-12" id="trusted-by">
+          <div className="text-center mb-10 px-5">
             <p className="lg:text-4xl text-3xl">Trusted By Countries Worldwide</p>
             <p className="lg:w-[80%] mx-auto mt-3 text-sm text-gray-600">
               From health ministries to international NGOs, see how different
@@ -216,7 +214,7 @@ export default function Landing() {
         </section>
 
         {/* Reviews */}
-        <section className="py-12">
+        {/* <section className="py-12">
           <div className="text-center mb-14">
             <p className="lg:text-4xl text-3xl">Real Impacts, Real Results</p>
             <p className="lg:w-[80%] mx-auto mt-3 text-sm text-gray-600">
@@ -240,7 +238,7 @@ export default function Landing() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         <section>
           <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-6 w-[85%] mx-auto mb-14">
@@ -294,7 +292,7 @@ export default function Landing() {
               </div>
               <div className="flex items-center gap-2 col-span-2 col-start-2">
                 <Rocket />
-                <p>Enterprise Security</p>
+                <p>Quick Setup</p>
               </div>
             </div>
           </div>
