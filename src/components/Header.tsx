@@ -3,6 +3,7 @@ import logo from "../assets/mctt_logo.svg";
 import { Button } from "./ui/button";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import DemoRequestModal from "./DemoRequestModal";
 
 export default function Header() {
   const navLinks = [
@@ -127,9 +128,11 @@ export default function Header() {
             </div>
 
             <div>
-              <Button className="rounded bg-blue-500 hover:bg-blue-500/90 transition-colors">
-                Request Demo
-              </Button>
+              <DemoRequestModal>
+                <Button className="rounded bg-blue-500 hover:bg-blue-500/90 transition-colors">
+                  Request a Demo
+                </Button>
+              </DemoRequestModal>
             </div>
           </div>
           <div className="lg:hidden block text-white">

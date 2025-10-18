@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 export default function AnimatedText() {
-  const texts = ["Microplanning", "Service Delivery", "Campaign"];
+  const texts = ["Microplanning", "Service Delivery", "Campaigns"];
   const [currentIndex, setCurrentIndex] = useState(0);
   const textRef = useRef(null);
 

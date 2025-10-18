@@ -1,5 +1,6 @@
 import AnimatedText from "./components/Rotating_Texts";
 import { Button } from "./components/ui/button";
+import DemoRequestModal from "./components/DemoRequestModal";
 import world from "./assets/world.svg";
 import group from "./assets/group.svg";
 import frame from "./assets/Frame_mctt.svg";
@@ -26,18 +27,21 @@ export default function Landing() {
             </div>
 
             <p className="lg:text-lg md:text-md md:text-left text-center my-5 w-[90%] md:mx-0 mx-auto">
-              Empowering organization to plan, visualize, and monitor operations
+              Empowering governments and organizations to plan, visualize, and monitor operations
               through real-time geospatial data
             </p>
 
             <div className="flex gap-5 md:justify-start justify-center">
-              <Button className="bg-gradient-to-r from-gradient-start to-gradient-end rounded text-white shadow hover:bg-gradient-to-r hover:from-gradient-start/90 hover:to-gradient-end/90 outline-none">
-                {" "}
-                See How it Works
+              <Button asChild className="bg-gradient-to-r from-gradient-start to-gradient-end rounded text-white shadow hover:bg-gradient-to-r hover:from-gradient-start/90 hover:to-gradient-end/90 outline-none">
+                <a href="#plan-smarter">
+                  Learn More
+                </a>
               </Button>
-              <Button className="text-gray-800 bg-transparent border border-gray-800 rounded hover:bg-transparent hover:border-gray-800/30">
-                Request A Demo
-              </Button>
+              <DemoRequestModal>
+                <Button className="text-gray-800 bg-transparent border border-gray-800 rounded hover:bg-transparent hover:border-gray-800/30">
+                  Request a Demo
+                </Button>
+              </DemoRequestModal>
             </div>
 
             <div className="flex gap-5 my-4 lg:text-sm text-xs md:justify-start justify-center sm:text-left text-center">
@@ -47,7 +51,7 @@ export default function Landing() {
               </div>
               <div className="flex items-center justify-center gap-1">
                 <img src={world} alt="" />
-                <p>10+ Countries Supported</p>
+                <p>100k+ Households Reached</p>
               </div>
             </div>
           </div>
@@ -187,7 +191,7 @@ export default function Landing() {
         {/* Trusted Div */}
         <section className="py-12" id="trusted-by">
           <div className="text-center mb-10 px-5">
-            <p className="lg:text-4xl text-3xl">Trusted By Countries Worldwide</p>
+            <p className="lg:text-4xl text-3xl">Driving smarter decisions for communities</p>
             <p className="lg:w-[80%] mx-auto mt-3 text-sm text-gray-600">
               From health ministries to international NGOs, see how different
               organizations use MCTT
@@ -262,23 +266,23 @@ export default function Landing() {
         </section>
 
         {/* Last Section */}
-        <section className="bg-gradient-to-r from-gradient-end/10 via-gradient-start/10 to-purple-300/10">
+        <section id="request-demo" className="bg-gradient-to-r from-gradient-end/10 via-gradient-start/10 to-purple-300/10">
           <div className="flex flex-col justify-between items-center py-10">
             <div className="text-center ">
               <p className="lg:text-4xl text-3xl">Start Mapping Your Impact Today</p>
               <p className="w-[60%] mx-auto mt-3 text-sm text-gray-600">
-                Join hundreds of countries using MCTT to transform how they
-                plan, execute, and monitor field operations.
+                Join teams across continents using CoverageTrackr to transform how they plan, execute, and monitor field operations.
               </p>
             </div>
             <div className="flex gap-5 my-5">
-              <Button className="bg-gradient-to-r from-gradient-start to-gradient-end rounded text-white shadow hover:bg-gradient-to-r hover:from-gradient-start/90 hover:to-gradient-end/90 outline-none">
-                {" "}
-                See How it Works
+              <Button asChild className="bg-gradient-to-r from-gradient-start to-gradient-end rounded text-white shadow hover:bg-gradient-to-r hover:from-gradient-start/90 hover:to-gradient-end/90 outline-none">
+                <a href="#plan-smarter">Learn More</a>
               </Button>
-              <Button className="text-gray-800 bg-transparent border border-gray-800 rounded hover:bg-transparent hover:border-gray-800/30">
-                Request A Demo
-              </Button>
+              <DemoRequestModal>
+                <Button className="text-gray-800 bg-transparent border border-gray-800 rounded hover:bg-transparent hover:border-gray-800/30">
+                  Request a Demo
+                </Button>
+              </DemoRequestModal>
             </div>
 
             <div className="sm:flex sm:gap-6 gap-x-6 sm:text-sm text-xs mx-auto grid grid-cols-4">
