@@ -3,8 +3,41 @@ import ig from "../assets/ig.svg"
 import x from "../assets/x.svg"
 import linkedin from "../assets/linkedin.svg"
 import DemoRequestModal from "./DemoRequestModal";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (href: string, isRoute: boolean = false) => {
+    if (isRoute) {
+      navigate(href);
+    } else {
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const targetId = href.replace("#", "");
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }, 100);
+      } else {
+        const targetId = href.replace("#", "");
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
+    }
+  };
+
   return (
     <div className="bg-primary text-white text-sm">
         <div className="grid md:grid-cols-3 w-[85%] mx-auto py-10 gap-6">
@@ -32,9 +65,24 @@ export default function Footer() {
               <div>
                 <p className="text-lg">Resources</p>
                 <div className="flex flex-col space-y-2 text-white/80 mt-5">
-                  <a href="#plan-smarter" className="hover:text-white transition-colors">About</a>
-                  <a href="#comprehensive" className="hover:text-white transition-colors">Features</a>
-                  <a href="#trusted-by" className="hover:text-white transition-colors">Use Cases</a>
+                  <button 
+                    onClick={() => handleNavigation("#plan-smarter")}
+                    className="text-left hover:text-white transition-colors"
+                  >
+                    About
+                  </button>
+                  <button 
+                    onClick={() => handleNavigation("#comprehensive")}
+                    className="text-left hover:text-white transition-colors"
+                  >
+                    Features
+                  </button>
+                  <button 
+                    onClick={() => handleNavigation("#trusted-by")}
+                    className="text-left hover:text-white transition-colors"
+                  >
+                    Use Cases
+                  </button>
                   <DemoRequestModal>
                     <button className="text-left hover:text-white transition-colors">Contact Us</button>
                   </DemoRequestModal>
@@ -44,7 +92,12 @@ export default function Footer() {
               <div>
                 <p className="text-lg">Legal</p>
                 <div className="flex flex-col space-y-2 text-white/80 mt-5">
-                  <span className="opacity-50 cursor-default">Privacy Policy</span>
+                  <button 
+                    onClick={() => handleNavigation("/privacy-policy", true)}
+                    className="text-left hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </button>
                   <span className="opacity-50 cursor-default">Terms of Service</span>
                   <span className="opacity-50 cursor-default">Cookie Policy</span>
                   <span className="opacity-50 cursor-default">Terms and Conditions</span>

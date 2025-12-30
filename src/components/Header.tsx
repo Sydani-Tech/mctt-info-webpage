@@ -4,33 +4,59 @@ import { Button } from "./ui/button";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import DemoRequestModal from "./DemoRequestModal";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  
   const navLinks = [
-    { name: "About", href: "#plan-smarter" },
-    { name: "Features", href: "#comprehensive" },
-    { name: "Use Cases", href: "#trusted-by" },
+    { name: "About", href: "#plan-smarter", isRoute: false },
+    { name: "Features", href: "#comprehensive", isRoute: false },
+    { name: "Use Cases", href: "#trusted-by", isRoute: false },
+    // { name: "Privacy Policy", href: "/privacy-policy", isRoute: true },
   ];
 
   const [open, setOpen] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute: boolean) => {
     e.preventDefault();
     
-    if (href === "#") return;
-    
-    const targetId = href.replace("#", "");
-    const targetElement = document.getElementById(targetId);
-    
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    if (isRoute) {
+      // Handle route navigation
+      navigate(href);
+      if (open) {
+        setOpen(false);
+      }
+    } else {
+      // Handle smooth scroll navigation
+      if (location.pathname !== '/') {
+        // If not on homepage, navigate to homepage first then scroll
+        navigate('/');
+        setTimeout(() => {
+          const targetId = href.replace("#", "");
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }, 100);
+      } else {
+        // If on homepage, just scroll
+        const targetId = href.replace("#", "");
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
       
-      // Close mobile menu if open
       if (open) {
         setOpen(false);
       }
@@ -118,8 +144,8 @@ export default function Header() {
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={(e) => handleSmoothScroll(e, link.href)}
-                    className="text-white transition-colors cursor-pointer"
+                    onClick={(e) => handleNavigation(e, link.href, link.isRoute)}
+                    className="text-white transition-colors cursor-pointer hover:text-blue-200"
                   >
                     {link.name}
                   </a>
@@ -160,8 +186,8 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => handleSmoothScroll(e, link.href)}
-                className="transition-colors opacity-0 cursor-pointer"
+                onClick={(e) => handleNavigation(e, link.href, link.isRoute)}
+                className="transition-colors opacity-0 cursor-pointer hover:text-blue-200"
               >
                 {link.name}
               </a>
