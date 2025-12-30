@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Clock, Send, User, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
 import { Label } from "./components/ui/label";

@@ -2,8 +2,7 @@ import logo from "../assets/mctt_logo.svg";
 import ig from "../assets/ig.svg"
 import x from "../assets/x.svg"
 import linkedin from "../assets/linkedin.svg"
-import DemoRequestModal from "./DemoRequestModal";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Footer() {
   const navigate = useNavigate();

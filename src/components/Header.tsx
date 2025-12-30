@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import DemoRequestModal from "./DemoRequestModal";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
