@@ -83,9 +83,12 @@ export default function Footer() {
                   >
                     Use Cases
                   </button>
-                  <DemoRequestModal>
-                    <button className="text-left hover:text-white transition-colors">Contact Us</button>
-                  </DemoRequestModal>
+                  <button 
+                    onClick={() => handleNavigation("/contact-us", true)}
+                    className="text-left hover:text-white transition-colors"
+                  >
+                    Contact Us
+                  </button>
                 </div>
               </div>
 

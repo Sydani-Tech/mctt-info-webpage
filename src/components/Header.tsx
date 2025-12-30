@@ -14,6 +14,7 @@ export default function Header() {
     { name: "About", href: "#plan-smarter", isRoute: false },
     { name: "Features", href: "#comprehensive", isRoute: false },
     { name: "Use Cases", href: "#trusted-by", isRoute: false },
+    { name: "Contact", href: "/contact-us", isRoute: true },
     // { name: "Privacy Policy", href: "/privacy-policy", isRoute: true },
   ];
 
