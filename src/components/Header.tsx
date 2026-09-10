@@ -9,7 +9,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const navLinks = [
     { name: "About", href: "#plan-smarter", isRoute: false },
     { name: "Features", href: "#comprehensive", isRoute: false },
@@ -22,9 +22,13 @@ export default function Header() {
   const [shouldRender, setShouldRender] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute: boolean) => {
+  const handleNavigation = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+    isRoute: boolean,
+  ) => {
     e.preventDefault();
-    
+
     if (isRoute) {
       // Handle route navigation
       navigate(href);
@@ -33,9 +37,9 @@ export default function Header() {
       }
     } else {
       // Handle smooth scroll navigation
-      if (location.pathname !== '/') {
+      if (location.pathname !== "/") {
         // If not on homepage, navigate to homepage first then scroll
-        navigate('/');
+        navigate("/");
         setTimeout(() => {
           const targetId = href.replace("#", "");
           const targetElement = document.getElementById(targetId);
@@ -57,7 +61,7 @@ export default function Header() {
           });
         }
       }
-      
+
       if (open) {
         setOpen(false);
       }
@@ -87,7 +91,7 @@ export default function Header() {
             height: "auto",
             duration: 0.4,
             ease: "power2.out",
-          }
+          },
         );
 
         // Animate links with stagger
@@ -104,7 +108,7 @@ export default function Header() {
             stagger: 0.1,
             delay: 0.2,
             ease: "power2.out",
-          }
+          },
         );
       } else {
         // Animate links out first
@@ -145,7 +149,9 @@ export default function Header() {
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={(e) => handleNavigation(e, link.href, link.isRoute)}
+                    onClick={(e) =>
+                      handleNavigation(e, link.href, link.isRoute)
+                    }
                     className="text-white transition-colors cursor-pointer hover:text-blue-200"
                   >
                     {link.name}
