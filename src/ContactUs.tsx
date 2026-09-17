@@ -70,7 +70,8 @@ export default function ContactUs() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800">Email Us</h3>
-                      <p className="text-gray-600">support@coveragetrackr.com</p>
+                      <p className="text-gray-600">contact - info@coveragetrackr.com</p>
+                      <p className="text-gray-600">Support - support@coveragetrackr.com</p>
                       <p className="text-sm text-gray-500 mt-1">We typically respond within 24 hours</p>
                     </div>
                   </div>
